@@ -28,7 +28,7 @@ const displayNews = async (news)=>{
 
 const lodeAllNewsDitails = async(id) =>{
 
-    const url =`https://openapi.programming-hero.com/api/news/category/0${id}`
+ const url =`https://openapi.programming-hero.com/api/news/category/0${id}`
    try{
     const res =await fetch (url)
     const data = await res.json()
@@ -59,8 +59,17 @@ const displayNewsOnCard = cards =>{
             const displaySpnner = document.getElementById('found-loder');
             displaySpnner.classList.remove('visually-hidden');
 
+   
+            const Piority = cards.sort((populer,lessPopuler)=>{
+                if(populer.total_view < lessPopuler.total_view){
+                    return 1;
+                }
+                else{
+                    return -1;
+                }
+            })
 
-    cards.forEach(card =>{
+      cards.forEach(card =>{
      
         const {image_url,thumbnail_url,title,details,author,total_view,} = card;
         const {name,published_date,img} =author;
@@ -73,11 +82,11 @@ const displayNewsOnCard = cards =>{
         creatCardDiv.classList.add("col-lg-4",  "col-sm-6","mt-6")
         creatCardDiv.innerHTML =`
                    
-        <div class="card">
+        <div class="card" onclick="modal()">
         <img src="${image_url}" class="card-img-top w-100 img-fluid" alt="...">
 
         <div class="d-flex">
-        <div class=" mx-1">
+        <div class=" mx-lg-1 mx-md-0 mx-sm-0">
           <i class="fa-solid fa-eye "></i> 
         </div>
         <div class="text-muted">
@@ -103,5 +112,43 @@ const displayNewsOnCard = cards =>{
         getCardSection.appendChild(creatCardDiv)
     })
 }
+
+// modeal js section 
+
+const modelUrl = async() =>{
+    const url = `https://openapi.programming-hero.com/api/news/id`;
+    
+   try{
+    const res = await fetch (url)
+    const data = await res.json()
+     const read = displayModel(data.data);
+     console.log(read)
+      return read;
+   }
+   catch(error){
+    console.log(error);
+   }
+}
+
+const displayModel = async(Ditail)=>{
+    
+    const getModelById = document.getElementById('model-body');
+
+     for( const ditsils in Ditail){
+    
+        const {category_name,category_id,img,title} = ditsils;
+        const createDiv =document.createElement('div');
+        createDiv.classList.add("fw-bold");
+        createDiv.innerHTML=`
+          <img src="${img}">
+          <h3> ${category_name}</h3>
+          <h5> ${title}</h5>
+        `;
+        getModelById.appendChild(createDiv)
+     }
+}
+
+
+ 
  lodeAllNewsDitails(01)
  lodeAllNews()
