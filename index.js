@@ -43,6 +43,18 @@ const displayNewsOnCard = cards =>{
  
     const getCardSection = document.getElementById('news-card-section');
     getCardSection.textContent =""
+
+
+            // founded msg 
+            const foundedMessege = document.getElementById('found-fild');
+            foundedMessege.classList.remove('hidden')
+  
+      
+           // founded-text
+              const fountText = document.getElementById('founded-text')
+             fountText.innerText = cards.length;
+
+             
     cards.forEach(card =>{
      
         const {image_url,thumbnail_url,title,details,author,total_view,} = card;
