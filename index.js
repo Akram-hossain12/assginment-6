@@ -1,4 +1,4 @@
-// loadCategory 
+
 const lodeAllNews  = async() =>{
     const url ="https://openapi.programming-hero.com/api/news/categories"
    try{
@@ -74,7 +74,7 @@ const displayNewsOnCard = cards =>{
         <div class="mr-3 d-flex">
         <img class="w-25 ms-3 mb-2 rounded-circle" src="${img ? img : "img not found"}" alt="">
         <p class="mx-3 mt-4 text-muted">${name ? name : "name not found"}</p>
-      </div>
+        </div>
          
      
 
