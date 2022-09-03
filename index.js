@@ -57,13 +57,13 @@ const displayNewsOnCard = cards =>{
         <img src="${thumbnail_url}" class="card-img-top w-100 img-fluid" alt="...">
 
         <div class="d-flex">
-        <div class=" mx-3">
+        <div class=" mx-1">
           <i class="fa-solid fa-eye "></i> 
         </div>
         <div class="text-muted">
         <p><span>${total_view ? total_view : "0"} M</span></p> 
         </div>
-        <p class="mx-3 text-muted">${published_date ? published_date : "published date not found"}</p>
+        <p style=" margin-left:80px;" class=" text-muted">${published_date ? published_date : "published date not found"}</p>
        </div>
 
         <div class="card-body m-0">
@@ -72,8 +72,8 @@ const displayNewsOnCard = cards =>{
         </div>
 
         <div class="mr-3 d-flex">
-        <img class="w-25 ms-3 rounded-circle" src="${img ? img : "img not found"}" alt="">
-        <p class="mx-3 mt-4">${name ? name : "name not found"}</p>
+        <img class="w-25 ms-3 mb-2 rounded-circle" src="${img ? img : "img not found"}" alt="">
+        <p class="mx-3 mt-4 text-muted">${name ? name : "name not found"}</p>
       </div>
          
      
@@ -83,5 +83,5 @@ const displayNewsOnCard = cards =>{
         getCardSection.appendChild(creatCardDiv)
     })
 }
-lodeAllNewsDitails()
+ lodeAllNewsDitails()
  lodeAllNews()
