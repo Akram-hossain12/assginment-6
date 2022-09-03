@@ -22,7 +22,7 @@
                 <span class="navbar-text">
                   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                      <a class="nav-link text-primary border-bottom border-primary fw-bold" href="#">Home</a>
+                      <a class="nav-link text-primary border-bottom border-primary fw-bold" href="./index.html">Home</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link text-dark fw-bold" href="bloge.html">Blog</a>
@@ -39,25 +39,44 @@
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  Accordion Item #1
+                <button class="accordion-button h2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    difference bettwen function and arrow function?
                 </button>
               </h2>
               <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                <div class="accordion-body h5">
+                    Arrow function — also called fat arrow function— is a new feature introduced in ES6 that is a more concise syntax for writing function expressions. While both regular JavaScript functions and arrow functions work in a similar manner, there are certain differences between them.
+                   1. Understanding the differences between regular and arrow functions helps choose the right syntax for specific needs.
+
+                   2. this value inside a regular function is dynamic and depends on the invocation. But this inside the arrow function is bound lexically and equals to this of the outer function.
+
+                  3.  arguments object inside the regular functions contains the list of arguments. The arrow function, on the opposite, doesn't define arguments (but you can easily access the arrow function arguments using a rest parameter ...args).
+
+                  4.  If the arrow function has one expression, then the expression is returned implicitly, even without using the return keyword.
                 </div>
               </div>
             </div>
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Accordion Item #2
+                <button class="accordion-button collapsed h2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    What is difference between VAR ,let and Const?
                 </button>
               </h2>
               <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                <div class="accordion-body h5">
+                     the early days of JavaScript, there was only one way to declare variables and that was using the var keyword. However, there were some issues associated with variables declared using the var keyword so it was necessary to evolve new ways for variable declaration. With the advent of ES6, now developers are able to define variables according to their specific needs, thanks to two new keywords: let and const.
+
+                    All three of these three keywords have similarities in their syntax for declaring variables. However, they differ in their usage and scope, as detailed in the next section.
+                    
+                    Read: Common Causes of JavaScript Errors and How to Avoid Them
+                    
+                    var, let, and const Variable Declaration in JavaScript
+                    The differences between var, let, and const variable declaration in JavaScript include:
+                    Variables declared with var and const are scoped to the immediate function body.
+                    Variables declared with the var keyword are hoisted. Hoisting means that the variable can be accessed in their enclosing scope even before they are declared.
+                    Variables declared with the let keyword are block-scoped, which means the variables will have scope to the immediate enclosing block.
+                    
+                    Let us now discuss, in detail, how these keywords can make a developer’s code more efficient and how to use each keyword to declare variables in JavaScript programs.
                 </div>
               </div>
             </div>
