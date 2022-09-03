@@ -83,5 +83,5 @@ const displayNewsOnCard = cards =>{
         getCardSection.appendChild(creatCardDiv)
     })
 }
- lodeAllNewsDitails()
+ lodeAllNewsDitails(01)
  lodeAllNews()
