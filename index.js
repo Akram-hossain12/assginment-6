@@ -45,7 +45,7 @@ const displayNewsOnCard = cards =>{
     getCardSection.textContent =""
 
 
-            // founded msg 
+            // found mazzeg
             const foundedMessege = document.getElementById('found-fild');
             foundedMessege.classList.remove('hidden')
   
@@ -54,7 +54,12 @@ const displayNewsOnCard = cards =>{
               const fountText = document.getElementById('founded-text')
              fountText.innerText = cards.length;
 
-             
+            //  spinner  
+
+            const displaySpnner = document.getElementById('found-loder');
+            displaySpnner.classList.remove('visually-hidden');
+
+
     cards.forEach(card =>{
      
         const {image_url,thumbnail_url,title,details,author,total_view,} = card;
@@ -62,11 +67,14 @@ const displayNewsOnCard = cards =>{
 
         const creatCardDiv =document.createElement("div");
 
-        creatCardDiv.classList.add("col-lg-3",  "col-sm-6","mt-6")
+        const displaySpnner = document.getElementById('found-loder');
+        displaySpnner.classList.add('visually-hidden');
+
+        creatCardDiv.classList.add("col-lg-4",  "col-sm-6","mt-6")
         creatCardDiv.innerHTML =`
                    
         <div class="card">
-        <img src="${thumbnail_url}" class="card-img-top w-100 img-fluid" alt="...">
+        <img src="${image_url}" class="card-img-top w-100 img-fluid" alt="...">
 
         <div class="d-flex">
         <div class=" mx-1">
@@ -75,12 +83,12 @@ const displayNewsOnCard = cards =>{
         <div class="text-muted">
         <p><span>${total_view ? total_view : "0"} M</span></p> 
         </div>
-        <p style=" margin-left:80px;" class=" text-muted">${published_date ? published_date : "published date not found"}</p>
+        <p style=" margin-left:160px;" class=" text-muted">${published_date ? published_date : "published date not found"}</p>
        </div>
 
         <div class="card-body m-0">
           <h4 class="card-title">${title > 8 ? title.slice(0,8) + "....." : title}</h4>
-          <p>${details.length > 50 ? details.slice(0,50) + " ....." : details}</p>
+          <p>${details.length > 100 ? details.slice(0,100) + " ....." : details}</p>
         </div>
 
         <div class="mr-3 d-flex">
